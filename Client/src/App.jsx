@@ -10,6 +10,7 @@ function App() {
         console.log(res);
         
       })
+      .catch((err) => console.error(err));
     }
    useEffect(()=>{
     getAllUsers();
