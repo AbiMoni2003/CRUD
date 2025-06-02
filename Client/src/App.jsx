@@ -44,6 +44,7 @@ function App() {
     const handleAdd=()=>{
         setUserData({Name:"",Age:""})
         setModelOpen(true)
+        setEditShow(1)
     }
 
     const handleData =(e)=>{
@@ -111,7 +112,8 @@ function App() {
         {modelOpen && 
           <div className="model">
             <div className="model-content">
-              <span className="close" onClick={()=>setModelOpen(false)}>&times;</span>
+              <span className="close" onClick={()=>{setModelOpen(false);
+                                                  setEditShow(1);}}>&times;</span>
               <h2>Add User Details</h2>
               <div className="input-group">
                 <label htmlFor="Name">Full Name</label>
