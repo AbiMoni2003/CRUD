@@ -27,12 +27,16 @@ function App() {
    }
 
    const deleteUser= async(_id)=>{
-     await  axios.delete(`https://crud-1x9p.onrender.com/movies/${_id}`).then
+    const confrom = window.confirm("Are You Sure?");
+    if(confrom){
+       await  axios.delete(`https://crud-1x9p.onrender.com/movies/${_id}`).then
     ((res)=>{
       setUsers(res.data);
         setFilterUser(res.data);
     })
    }
+    }
+    
 
 
   return (
