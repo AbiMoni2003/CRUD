@@ -3,8 +3,7 @@ import { model, Schema } from "mongoose";
 const schema = new Schema ({
     Name :{
         type : String,
-        required : true,
-        unique :true
+        required : true
     },
     Age :Number
 })

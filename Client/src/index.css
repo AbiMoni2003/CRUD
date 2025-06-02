@@ -66,3 +66,58 @@ h1{
   background-color: rgb(227, 232, 232);
 }
 
+.model{
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0,0, 0.5);
+  
+}
+
+.model-content{
+  background-color: aliceblue;
+  margin: 10px auto;
+  width: 80%;
+  padding: 10px;
+  max-width: 450px;
+}
+
+.close{
+  float:right;
+  font-weight: bold;
+  font-size: 25px;
+  color: red;
+  font-weight: 800;
+}
+
+.close:hover,.close:focus{
+  color: black;
+  cursor: pointer;
+}
+
+.model-content h2{
+  font-weight: 700;
+  text-align: center;
+}
+
+.input-group{
+  margin-bottom: 10px;
+}
+
+.input-group label{
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input{
+  width: 95%;
+  padding: 8px;
+  outline: none;
+  border: 0;
+  border: 1px solid gainsboro;
+  border-radius: 8px;
+}
