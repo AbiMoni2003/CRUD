@@ -20,7 +20,8 @@ function App() {
 
    const handleSearchChange =(e)=>{
         const searchText = e.target.value.toLowerCase();
-        const filterdUsers = users.filter((user)=>user.Name.toLowerCase().includes(searchText)
+        const filterdUsers = users.filter((user)=>user.Name.toLowerCase().includes(searchText) ||
+        user.Age.toString().includes(searchText)
       )
        setFilterUser(filterdUsers)
    }
