@@ -37,6 +37,23 @@ h1{
   font-weight: 600;
 }
 
+.green{
+  background-color: rgb(60, 227, 60);
+}
+
+.search-div{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.search-div input{
+  padding: 10px 20px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid rgb(210, 184, 131);
+}
+
 .btn.yellow{
   background-color: rgb(242, 242, 17);
 }

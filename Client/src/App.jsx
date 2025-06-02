@@ -3,10 +3,12 @@ import axios from "axios";
 
 function App() {
     const [users,setUsers] = useState([]);
+    const [filterUsers,setFilterUser] =useState([])
     const getAllUsers=()=>{
       axios.get("https://crud-1x9p.onrender.com/movies/").then
       ((res)=>{
         setUsers(res.data);
+        setFilterUser(res.data);
         console.log(res);
         
       })
@@ -15,10 +17,24 @@ function App() {
    useEffect(()=>{
     getAllUsers();
    },[])
+
+   const handleSearchChange =(e)=>{
+        const searchText = e.target.value.toLowerCase();
+        const filterdUsers = users.filter((user)=>user.Name.toLowerCase().includes(searchText) ||
+          user.Age.includes(searchText)
+      )
+       setFilterUser(filterdUsers)
+   }
+
+
   return (
     <>
       <div className="container">
         <h1>CRUD OPERATION USING NODEJS</h1>
+        <div className="search-div">
+          <input type="search" placeholder="Search" onChange={handleSearchChange}/>
+          <button className="btn green">Add Record</button>
+        </div>
         <table className="table">
           <thead>
             <tr>
@@ -30,7 +46,7 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            {Array.isArray(users) && users.map((user, index) => (
+            {Array.isArray(filterUsers) && filterUsers.map((user, index) => (
               <tr key={user._id || index}>
                 <td>{index + 1}</td>
                 <td>{user.Name}</td>
