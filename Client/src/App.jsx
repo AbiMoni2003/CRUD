@@ -26,6 +26,14 @@ function App() {
        setFilterUser(filterdUsers)
    }
 
+   const deleteUser= async(_id)=>{
+     await  axios.delete(`https://crud-1x9p.onrender.com/movies/${_id}`).then
+    ((res)=>{
+      setUsers(res.data);
+        setFilterUser(res.data);
+    })
+   }
+
 
   return (
     <>
@@ -52,7 +60,7 @@ function App() {
                 <td>{user.Name}</td>
                 <td>{user.Age}</td>
                 <td><button className="btn yellow">Edit</button></td>
-                <td><button className="btn red">Delete</button></td>
+                <td><button className="btn red" onClick={()=>deleteUser(user._id)}>Delete</button></td>
               </tr>
             ))}
           </tbody>
