@@ -31,8 +31,7 @@ function App() {
     if(confrom){
        await  axios.delete(`https://crud-1x9p.onrender.com/movies/${_id}`).then
     ((res)=>{
-      setUsers(res.data);
-        setFilterUser(res.data);
+      getAllUsers();
     })
    }
     }
