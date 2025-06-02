@@ -4,7 +4,7 @@ import axios from "axios";
 function App() {
     const [users,setUsers] = useState([]);
     const getAllUsers=()=>{
-      axios.get("http://localhost:5000/movies").then
+      axios.get("https://crud-1x9p.onrender.com/movies").then
       ((res)=>{
         setUsers(res.data);
         console.log(res);
