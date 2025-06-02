@@ -6,6 +6,7 @@ function App() {
     const [filterUsers,setFilterUser] =useState([])
     const [modelOpen,setModelOpen] =useState(false);
     const [userData,setUserData]=useState({Name:"",Age:""});
+    const [editShow,setEditShow]=useState(1);
 
     const getAllUsers=()=>{
       axios.get("https://crud-1x9p.onrender.com/movies/").then
@@ -73,6 +74,7 @@ function App() {
     const handleEdit=async(user)=>{
       setUserData(user)
       setModelOpen(true)
+      setEditShow(2)
     }
 
 
@@ -119,7 +121,11 @@ function App() {
                 <label htmlFor="Age">Age</label>
                 <input type="text" name="Age" id="Age" value={userData.Age} onChange={handleData}/>
               </div>
-              <button className="btn green" onClick={handleSubmit}>Add User</button>
+              {editShow == 1 ?(<button className="btn green" onClick={handleSubmit}>Add User</button>)
+              :
+              (<button className="btn yellow" onClick={handleSubmit}>Update</button>
+
+              )}
             </div>
             
           </div>
